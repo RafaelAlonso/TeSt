@@ -225,9 +225,9 @@ gem install rake bundler rspec rubocop pry pry-byebug hub colored octokit
 
 ## Postgresql
 
-Postgresql é um banco de dados open-source robusto e production-ready. Mais para frente será útil, então instale-o agora rodando o seguinte comando
+Postgresql é um banco de dados open-source robusto e production-ready. Mais para frente será útil, então instale-o agora rodando o seguinte comando:
 
-```
+```bash
 sudo apt-get install -y postgresql postgresql-contrib libpq-dev build-essential
 echo `whoami` > /tmp/caller
 sudo su - postgres

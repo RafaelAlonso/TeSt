@@ -1,74 +1,68 @@
-# Setup instructions
+# Instruções
 
-The following instructions will help you to get ready for [Le Wagon](http://www.lewagon.org) fullstack bootcamp:
+As instruções abaixo te ajudarão a:
 
-- Grab a text editor, where you'll spend your day and nights
-- Install a package manager
-- Pimp your Terminal
-- Setup git and GitHub
-- Install Ruby
+- Ter um editor de texto (Sublime Text 3)
+- Instalar um package manager no seu Linux
+- Melhorar seu Terminal
+- Setup Git e GitHub
+- Instalar o Ruby
 
 
 ## Command Line Tools
 
-Open the Terminal (click the magnifying glass icon in the top right corner of your screen and type `Terminal`):
-
-![](images/open-terminal.png)
-
-Copy-paste the following command in the terminal and hit Enter.
+Abra o terminal e digite o seguinte código:
 
 ```bash
 xcode-select --install
 ```
 
-If you'll receive the following message, you can just skip this step and go to next step.
+Caso receba o seguinte código, poderá pular este passo e seguir ao próximo.
 
 ```
 # command line tools are already installed, use "Software Update" to install updates
 ```
 
-Otherwise, it will open a window asking you if you want to install some software. Accept and wait. If it fails, try again the command line above, sometimes the Apple servers are overloaded.
+Senão, uma janela se abrirá perguntando se você quer instalar alguns softwares. Aceite e espere. Caso falhe, tente novamente a linha de comando acima (algumas vezes os servidores Apple estarão sobrecarregados).
 
 ![](images/xcode-select-install.png)
 
-While it's downloading, you can go on with configuring your GitHub account, but **stop** before Homebrew. You'll need the command line tools installed for that step.
+Enquanto o software é baixado, você pode prosseguir e configurar sua conta no GitHub, mas **pare antes do Homebrew**. Você precisará das ferramentas que estão sendo instaladas.
 
 
-## GitHub account
+## Conta no GitHub
 
-Have you signed up to GitHub? If not, [do it right away](https://github.com/join).
+Se ainda não tem uma conta no GitHub, [crie ela aqui](https://github.com/join).
 
-:point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatars. Please do it **now**.
+:point_right: **[Ajuste seu perfil aqui](https://github.com/settings/profile)** e ponha um nome e uma foto que dê para reconhecer, por favor.
 
 
 ## Homebrew
 
-On Mac, you need to install [Homebrew](http://brew.sh/) which is a Package Manager.
-It will be used as soon as we need to install some software.
-To do so, open your Terminal and run:
+No Mac, você precisa instalar [Homebrew](http://brew.sh/), um Package Manager. Ele será utilizado assim que precisarmos instalar algum software.
+Para fazer isso, abra seu terminal e rode:
 
 ```bash
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
+Isso irá pedir sua confirmação (basta apertar `Enter`) e a senha de sua máquina.
 
-This will ask for your confirmation (hit `Enter`) and your laptop session password.
+Se você já tiver o Homebrew instalado, será avisado disso e você pode apenas prosseguir.
 
-If you already have Homebrew, it will tell you so, that's fine, go on.
-
-Then install some useful software:
+Para instalar alguns softwares úteis, rode:
 
 ```bash
 brew update
 ```
 
-If you get a `/usr/local must be writable` error, just run this:
+Se receber um erro `/usr/local must be writable`, rode:
 
 ```bash
 sudo chown -R $USER:admin /usr/local
 brew update
 ```
 
-Error message or not, proceed running the following in the terminal (you can copy / paste all the lines at once).
+Com ou sem erro, prossiga rodando o seguinte código no seu Terminal (pode copiar e colar tudo de uma só vez e apertar `Enter`):
 
 ```bash
 function install_or_upgrade { brew ls | grep $1 > /dev/null; if (($? == 0)); then brew upgrade $1; else brew install $1; fi }
@@ -82,23 +76,20 @@ install_or_upgrade "openssl"
 
 ## Sublime Text 3 - Your text editor
 
-A text editor is one of the most important tools of a developer. Go to [this page](http://www.sublimetext.com/3) and download **Sublime Text 3** for OS X. Install it (double click the downloaded file and drag & drop the app **into** the `Applications` folder, **don't skip this**). If you had Sublime Text 2 installed before, please uninstall it (by dragging/dropping it to the Trash).
+Para baixar o Sublime Text em sua máquina, vá para [essa página](http://www.sublimetext.com/3) e baixe **Sublime Text 3** para OS X. Instale-o (clicando duas vezes no arquivo baixado e arrastando o aplicativo para a pasta `Applications`, **não pule esta etapa**). Se você tinha o Sublime Text 2 instalado antes, desinstale-o (basta arrastá-lo para o lixo).
 
-Sublime Text is free without any time limitation but a popup will appear every ten saves to remind you there is a license to buy. You can hit `Esc` when this happens, but feel free to buy Sublime Text if you really like this one (there are alternatives).
+Sublime Text é um de vários editores de texto. É gratuito, mas de vez em quando aparecerá um popup perguntando se quer comprar uma licença. Caso não queira, apenas aperte `Esc` e o popup sumirá.
 
-Again, make sure that Sublime Text is there, not in the disk image you downloaded. To make sure it's correct, once Sublime Text is installed, unmount the "Sublime Text 3" disk in the left panel of Finder. Finder will complain if something went wrong. Ask a teacher.
+## Oh-my-zsh
 
-
-
-## Oh-my-zsh - Fancy your Terminal
-
-We will use the shell named `zsh` instead of `bash`, the default one.
+Usaremos um tipo diferente de shell: o `zsh` (o default é o `bash`).
 
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-Be careful, at the end of this script, it will prompt for your laptop password again. You have to write it correctly (you will not see it when you type) and hit `Enter`. You should get something like:
+Cuidado, sua senha será requisitada. Ao fim da instalação seu prompt deverá parecer com isso:
+
 
 ```bash
          __                                     __
@@ -107,162 +98,135 @@ Be careful, at the end of this script, it will prompt for your laptop password a
 / /_/ / / / /  / / / / / / /_/ /    / /_(__  ) / / /
 \____/_/ /_/  /_/ /_/ /_/\__, /    /___/____/_/ /_/
                         /____/                       ....is now installed!
-````
+```
 
-Now quit the Terminal (`⌘` + `Q`), and restart it.
+Agora feche o terminal (`⌘` + `Q`) e abra-o novamente.
 
-You should see something like this:
+Você deverá ver algo como isso
 
 ![](images/on-my-zsh.png)
 
-If not, **stop right away** and call a teacher.
+Se não parecer, algo deu errado. **Pergunte ao Professor** (ou à internet) como resolver o problema (caso não saiba como resolver sozinho)
 
-On Mac, open `Terminal > Preferences` and set the "Pro" theme as default in `Profiles` (*`Réglages`* in French).
+Você pode mudar a aparência do seu Terminal! Entre em `Terminal > Preferences`, escolha seu tema e clique em `Default` (canto inferior esquerdo) para que este seja o tema sempre que abrir uma nova janela.
 
 ![](images/terminal-pro.png)
-
-Quit and relaunch the Terminal. It should now have a nice black background, more easy on the eyes.
 
 
 ## GitHub
 
-We need to generate SSH keys which are going to be used by GitHub and Heroku
-to authenticate you. Think of it as a way to log in, but different from the
-well known username/password couple. If you already generated keys
-that you already use with other services, you can skip this step.
+Você precisará gerar uma chave (denomidada SSH key) para autenticar sua máquina tanto no GitHub quanto no outro site que usaremos mais para frente: o Heroku. Caso já tenha feito isso, pode simplesmente pular esse passo e seguir ao próximo.
 
-Open a terminal and type this, replacing the email with **yours** (the
-same one you used to create your GitHub account). It will prompt
-for information. Just press enter until it asks for a **passphrase**.
+Abra seu terminal e escreva isso. **CUIDADO**, você terá que substituir `SEU_EMAIL@AQUI.COM` pelo seu email (não copie e cole cegamente). O email deverá ser o mesmo que usou para se cadastrar no GitHub. Essa linha irá requisitar algumas informações. Aperte `Enter` até que **uma senha seja requisitada**.
 
 ```bash
 mkdir -p ~/.ssh && ssh-keygen -t ed25519 -o -a 100 -f ~/.ssh/id_ed25519 -C "TYPE_YOUR_EMAIL@HERE.com"
 ```
 
-**NB:** when asked for a passphrase, put something you want (and that you'll remember),
-it's a password to protect your private key stored on your hard drive. You'll type,
-nothing will show up on the screen, **that's normal**. Just type the passphrase,
-and when you're done, press `Enter`.
+Quando a senha for requisitada, ponha algo que você irá lembrar. É uma senha que protegerá sua SSH key **privada** guardada no seu HD. Se achar que não precisa de uma senha, apenas aperte `Enter`.
 
-Then you need to give your **public** key to GitHub. Run:
+Agora você precisará dar sua SSH key **pública** ao GitHub. Para isso, cole no terminal:
 
 ```bash
 cat ~/.ssh/id_ed25519.pub
 ```
 
-It will prompt on the screen the content of the `id_ed25519.pub` file. Copy that text,
-then go to [github.com/settings/ssh](https://github.com/settings/ssh). Click on
-**Add SSH key**, fill in the Title with your computer name, and paste the **Key**.
-Finish by clicking on the **Add key** green button.
+Isso irá printar a informação contida no arquivo de caminho absoluto `~/.ssh/id_ed25519.pub`. Copie esse texto, vá em [github.com/settings/ssh](https://github.com/settings/ssh), clique em **Add SSH key**, ponha como título o nome do seu computador e cole a informação abaixo. Salve a chave clicando em **Add key**.
 
-To check that this step is completed, in the terminal run this. You will be
-prompted a warning, type `yes` then `Enter`.
+Para verificar se o processo foi bem sucedido, rode isso. O terminal irá printar um aviso. Digite `yes` e aperte `Enter`.
 
 ```bash
 ssh -T git@github.com
 ```
 
-If you see something like this, you're done!
+Se algo como isso aparecer, tudo ocorreu como esperado :)
 
 ```bash
 # Hi --------! You've successfully authenticated, but GitHub does not provide shell access
 ```
 
-If it does not work, try running this before trying again the `ssh -T` command:
+Caso não funcione, tente rodar isso antes de tentar de novo o comando `ssh -T`:
 
 ```bash
 ssh-add ~/.ssh/id_ed25519
 ```
 
-Don't be in a rush, take time to [read this article](http://sebastien.saunier.me/blog/2015/05/10/github-public-key-authentication.html) to get a better
-understanding of what those keys are used for.
+Caso tenha interesse em entender melhor o que aconteceu, [leia esse artigo](http://sebastien.saunier.me/blog/2015/05/10/github-public-key-authentication.html) (em inglês).
 
 
-## Dotfiles (Standard configuration)
+## Dotfiles
 
-Hackers love to refine and polish their shell and tools. We'll start with a great default configuration provided by [Le Wagon](http://github.com/lewagon/dotfiles), stored on GitHub. As your configuration is personal, you need your own repository storing it, so you first need to fork it to your GitHub account.
+:arrow_right: [Clique aqui para **forkear**](https://github.com/RafaelAlonso/TeStDotfiles/fork)os arquivos de configuração (a.k.a `dotfiles`). Forkear significa criar um novo repositório em sua conta, idêntico ao repositório original. Isso é necessário porque você irá por informações específicas (seu nome) nesses arquivos para personalizar sua máquina.
 
-:arrow_right: [Click here to **fork**](https://github.com/lewagon/dotfiles/fork) the `lewagon/dotfiles` repository to your account. Forking means that it will create a new repo in your GitHub account, identical to the original one. You'll have a new repository on your GitHub account, `your_github_username/dotfiles`. We need to fork because each of you will need to put specific information (e.g. your name) in those files.
-
-Open your terminal. **Don't blindly copy paste this line**, replace `replace_this_with_your_github_username` with *your*
-own github usernickname.
+Abra seu terminal e digite a seguinte linha (**NÃO COPIE E COLE**), substituindo `seu_nome_no_github` por, bem, seu nome no github.
 
 ```bash
-export GITHUB_USERNAME=replace_this_with_your_github_username
-
-# Example:
-#   export GITHUB_USERNAME=ssaunier
+export GITHUB_USERNAME=seu_nome_no_github
 ```
 
-Now copy/paste this very long line in your terminal. Do **not** change this one.
+Agora copie e cole essa linha. **NÃO É NECESSÁRIO ALTERAR**.
 
 ```bash
 mkdir -p ~/code/$GITHUB_USERNAME && cd $_ && git clone git@github.com:$GITHUB_USERNAME/dotfiles.git
 ```
 
-Run the `dotfiles` installer.
+Rode o instalador `dotfiles`:
 
 ```bash
 cd ~/code/$GITHUB_USERNAME/dotfiles
 zsh install.sh
 ```
 
-Then run the git installer:
+Rode o installador `git`:
 
 ```bash
 cd ~/code/$GITHUB_USERNAME/dotfiles
 zsh git_setup.sh
 ```
 
-:point_up: This will **prompt** you for your name (`Firstname Lastname`) and your email.
+:point_up: Isso pedirá seu nome (o primeiro e o último) e seu email.
 
-Be careful, you **need** to put the **same** email as the one you sign up with on GitHub.
+Cuidado, pois o email precisa ser o **mesmo** que o seu email cadastrado no GitHub!
 
-Please now **quit** all your opened terminal windows.
+Ao terminar, feche todas as janelas do Terminal.
 
-### Sublime Text auto-configuration
+### Sublime Text auto-configuração
 
-Open a new terminal and type this:
-
-```bash
-stt
-```
-
-It will **open Sublime Text in the context of your current folder**. That's how we'll use it.
-
-**Close Sublime text** and open it again:
+Abra uma nova janela e digite isso:
 
 ```bash
 stt
 ```
 
-**Wait 1 minute** for additional packages to be automatically installed (New tabs with text will automatically open, containing documentation for each new package installed). TO follow package installation, you can go to `View > Show console`.
+Isso abrirá o Sublime Text na sua pasta atual. **Feche-o e abra novamente**.
 
-To check if plugins are installed, open the Command Palette (`⌘` + `⇧` + `P` on OSX, `Ctrl` + `⇧` + `P` on Linux), type in `Packlist` and then `Enter`, you should see a couple of packages installed (like [Emmet](http://emmet.io/)).
+**Espere 1 minuto**. Pacotes de personalização (adicionados no passo de `Dotfiles`) serão automaticamente instalados (novas Tabs aparecerão cada vez que um pacote terminar de ter sido instalado, apresentando mais informações sobre o console).
 
-If you don't, please install all of them manually. The list is referenced [here](https://github.com/lewagon/dotfiles/blob/master/Package%20Control.sublime-settings).
+Para checar todos os plugins / pacotes instalados, basta pressionar `Ctrl` + `⇧` + `P` para abrir a Paleta de Comandos, digitar `Packlist` e pressionar `Enter`. Você verá uma lista dos pacotes / plugins já instalados (como [Emmet](http://emmet.io/)).
 
-When it's done, you can close Sublime Text.
+Caso algo dê errado e você não consiga encontrá-los, por favor instale-os manualmente. A lista de pacotes que você deve possuir estão listadas [aqui](https://github.com/RafaelAlonso/TeStDotfiles/blob/master/Package%20Control.sublime-settings)
+
+Ao terminar, poderá fechar o Sublime Text.
 
 
 ### SSH Passphrase
 
-In a terminal window, launch this command:
+No seu terminal, rode este comando:
 
 ```bash
 sw_vers
 ```
 
-If your OS version (`ProductVersion` line) is greater or equal than **10.12**, you may proceed with the rest of this section. :warning: Otherwise, skip it and go directly to the Ruby install.
+Se sua versão do OS (`ProductVersion`) é maior ou igual a **10.12**, continue com esta etapa. :warning: Senão, pule-a e vá diretamente para a instalação do Ruby.
 
-In order not to re-type your SSH passphrase at every `git push`, you can add these lines to the `~/.ssh/config` file:
+Para não ter que reescrever sua senha para a chave SSH em todo `git push`, você poderá criar um arquivo `~/.ssh/config`:
 
 ```bash
 touch ~/.ssh/config  # Creates the file if it does not exist
 st ~/.ssh/config     # Opens the file in Sublime text
 ```
 
-And then add these 3 lines to the file. **Save**.
+E adicionar essas 3 linhas ao arquivo. **Não esqueça de salvar**.
 
 ```bash
 Host *
@@ -271,9 +235,9 @@ Host *
 ```
 
 
-## Installing Ruby (with [rbenv](https://github.com/sstephenson/rbenv))
+## Instalando o Ruby (com [rbenv](https://github.com/sstephenson/rbenv))
 
-First we need to clean up any previous Ruby installation you might have:
+Para ter certeza que não estará instalando nada duplicado, copie e cole isso no seu terminal para limpar qualquer instalação Ruby que você tenha feito anteriormente:
 
 ```bash
 rvm implode && sudo rm -rf ~/.rvm
@@ -283,90 +247,70 @@ rvm implode && sudo rm -rf ~/.rvm
 sudo rm -rf $HOME/.rbenv /usr/local/rbenv /opt/rbenv /usr/local/opt/rbenv
 ```
 
-Now let's get [`rbenv`](https://github.com/rbenv/rbenv) and [`ruby-build`](https://github.com/rbenv/ruby-build) packages from Homebrew, they'll be useful.
+Agora vamos instalar os pacotes [`rbenv`](https://github.com/rbenv/rbenv) e [`ruby-build`](https://github.com/rbenv/ruby-build) a partir do Homebrew. Eles serão úteis.
+
+Primeiro, desinstale qualquer um dos dois (caso tenha) para garantirmos que nada será duplicado.
 
 ```bash
 brew uninstall --force rbenv ruby-build
 ```
 
-Then quit **all your opened terminal windows** (Cmd + Q) and restart one. Then run:
+Em seguida, **feche todas as janelas do seu terminal** (Cmd + Q) e abra-o. Então rode:
 
 ```bash
 brew install rbenv
 ```
 
-Again, quit all your terminal windows and restart.
+**Feche seu terminal e abra-o novamente**.
 
-
-Now, you are ready to install the latest ruby version, and set it as the default version.
-
-Run this command, it will **take a while (5-10 minutes)**
+Agora você estará pronto para usar a versão 2.4.4 e colocá-la como a versão default. Rode o seguinte comando (**costuma demorar de 5 a 10 minutos**).
 
 ```bash
 rbenv install 2.4.4
 ```
 
-Once the ruby installation is done, run this command to tell the system
-to use the 2.4.4 version by default.
+Quando a instalação for concluída, rode esse comando para dizer ao sistema para usar a versão 2.4.4 por default.
 
 ```bash
 rbenv global 2.4.4
 ```
 
-Then **restart** your Terminal again (close it and reopen it).
+Agora **reinicie** seu Terminal mais uma vez e rode o seguinte comando:
 
 ```bash
 ruby -v
 ```
 
-You should see something starting with `ruby 2.4.4p`. If not, ask a teacher.
+Você deverá ver algo começando com `ruby 2.4.4p`. Se não, procure por ajuda.
 
-## Installing some gems
 
----
+## Instalando gemas
 
-:warning: If you are in **China** :cn:, you should update the way we'll install gem with the following commands. If you are not in China, well just skip this and go directly to the next `gem install` command!
-
-```bash
-# China only!
-gem sources --remove https://rubygems.org/
-gem sources -a https://ruby.taobao.org/
-gem sources -l
-# *** CURRENT SOURCES ***
-
-# https://ruby.taobao.org
-# Ensure it only has ruby.taobao.org
-```
-
----
-
-All, please run the following line:
+Rode o seguinte comando:
 
 ```bash
 gem install rake bundler rspec rubocop pry pry-byebug hub colored octokit
 ```
 
-**Never** install a gem with `sudo gem install`! Even if you stumble upon a Stackoverflow answer
-(or the Terminal) telling you to do so.
+**Nunca** instale uma gema com `sudo gem install`, mesmo que encontre uma resposta no Stackoverflow (ou no próprio Terminal) pedindo que você faça isso!!
 
 
 ## Postgresql
 
-In a few weeks, we'll talk about SQL and Databases and you'll need something called Postgresql,
-an open-source robust and production-ready database. Let's install it now.
+Postgresql é um banco de dados open-source robusto e production-ready. Mais para frente será útil, então instale-o agora rodando o seguinte comando:
 
 ```bash
 brew install postgresql
 brew services start postgresql
 ```
 
-Once you've done that, let's check if it worked:
+Quando tudo estiver pronto, cheque se está funcionando:
 
 ```bash
 psql -d postgres
 ```
 
-If you enter a new prompt like this one, you're good!
+Se receber um prompt como o abaixo, significa que tudo ocorreu como esperado.
 
 ```bash
 psql (9.5.3)
@@ -375,75 +319,36 @@ Type "help" for help.
 postgres=#
 ```
 
-To quit it, type `\q` then `Enter`.
+Para sair deste modo, digite `\q` e aperte `Enter`.
 
-
-## Security
-
-It is mandataory that you protect your session behind a password.If it is not already the case, go to ` > System Preferences > Users & Groups`, and change your account password. You should also go to ` > System Preferences > Security > General`. You should require a password `5 seconds` after sleep or screen saver begins.
-
-You can also go to ` > System Preferences > Mission Control`, and click on the `Hot Corners` button at the bottom left. Choose for the bottom right corner to start the screen saver. That way, when you leave your desk, you can quickly lock you screen by putting your mouse in the bottom right corner. 5 seconds after, your Macbook will be locked and will ask for a password to get back on the session.
 
 ## Check-up
 
-Let's check if you successfully installed everything.
+Por fim, veja se tudo está instalado corretamente
 
-Quit all opened Terminal, open a new one and run the following commands:
-
+Feche todas as janelas do seu terminal, abra uma nova e rode o seguinte comando:
 ```bash
-curl -Ls https://raw.githubusercontent.com/lewagon/setup/master/check.rb > _.rb && ruby _.rb || rm _.rb
+curl -Ls https://raw.githubusercontent.com/RafaelAlonso/TeSt/master/check.rb > _.rb && ruby _.rb || rm _.rb
 ```
 
-It should tell you if your workstation is ready :) If not, ask a teacher.
+Isso deverá mostrar que está tudo pronto. Se não, procure por ajuda.
 
 
-## Alumni
+## Teclado
 
-Register as a Wagon alumni by going to [kitt.lewagon.com/onboarding](http://kitt.lewagon.com/onboarding). Select your batch, sign in with GitHub and enter all your information.
+Como programador, você entende (ou entenderá) que deixar o teclado demora muito tempo, então gostará de minimzar o uso de seu trackpad ou mouse. Aqui estão alguns truques no OSX para alcançar isso:
 
-Your teacher will then validate that you are indeed part of the batch. You can ask him to do it as soon as you completed the registration form.
+### Velocidade do Teclado
 
-Once the teacher has approved your profile, go to your email inbox. You should have 2 emails:
+Vá para  > System Preferences > Keyboard. Configure `Key Repeat` para a posição mais rápida (mais a direita) e `Delay Until Repeat` para a posição mais curta (mais a direita).
 
-- One from Slack, inviting you to the Le Wagon Alumni slack community (where you'll chat with your buddies and all the previous alumni). Click on **Join** and fill the information.
-- One from GitHub, inviting you to `lewagon` team. **Accept it** otherwise you won't be able to access the lecture slides.
+### Acesso Total ao Teclado
 
-
-## Slack
-
-[Download](https://itunes.apple.com/fr/app/slack/id803453959?mt=12) the Slack native app from the mac App Store, and sign in to `lewagon-alumni` organization.
-
-Make sure you upload a picture there.
-
-You can also sign in to Slack on your iPhone or Android device!
-
-The idea is that you'll have Slack open all day, so that you can share useful links / ask for help / decide where to go to lunch / etc.
-
-Enjoy your ride with Le Wagon :)
-
-
-## Keyboard
-
-As you become a programer, you'll understand that leaving the keyboard takes a lot of time,
-so you'll want to minimize using the trackpad or the mouse. Here are a few tricks on OSX
-to help you do that:
-
-### Keyboard speed
-
-Go to  > System Preferences > Keyboard. Set `Key Repeat` to the fastest position (to the right) and
-`Delay Until Repeat` to the shortest position (to the right).
-
-### Full Keyboard Access
-
-Go to  > System Preferences > Keyboard. Click on the third tab (Shortcuts). At the bottom of the
-pane, click the radio button `All controls`. This way when you get a dialog with several options,
-you'll be able to type `Enter` to confirm, or `Space` to choose the cancel option. If you have more than
-two options, you can use tab to circle between them.
+Vá para  > System Preferences > Keyboard. Clique na terceira aba (Shortcuts / Atalhos). No fim da janela, clique em `All controls` / `Todos os controles`. Dessa forma, quando tiver um diálogo com diversas opções, poderá apertar `Enter` para confirmar ou `Espaço` para escolher a opção de cancelar. Se tiver mais de duas opções, poderá pressionar `Tab` para circular por entre elas.
 
 ### macOS For hackers
 
-[Read this script](https://github.com/mathiasbynens/dotfiles/blob/master/.macos) and cherry-pick some stuff you think will suit you.
-For instance, you can type in the terminal this one:
+[Leia esse script](https://github.com/mathiasbynens/dotfiles/blob/master/.macos) e escolha o que lhe preferir! Por exemplo, poderá escrever no terminal essa:
 
 ```bash
 # Expanding the save panel by default
