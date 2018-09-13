@@ -114,75 +114,64 @@ ssh-add ~/.ssh/id_ed25519
 Caso tenha interesse em entender melhor o que aconteceu, [leia esse artigo](http://sebastien.saunier.me/blog/2015/05/10/github-public-key-authentication.html) (em inglês).
 
 
-## Dotfiles (Standard configuration)
+## Dotfiles
 
+:arrow_right: [Clique aqui para **forkear**](https://github.com/RafaelAlonso/TeStDotfiles/fork)os arquivos de configuração (a.k.a `dotfiles`). Forkear significa criar um novo repositório em sua conta, idêntico ao repositório original. Isso é necessário porque você irá por informações específicas (seu nome) nesses arquivos para personalizar sua máquina.
 
-:arrow_right: [Clique aqui para **fork**](https://github.com/lewagon/dotfiles/fork) the `lewagon/dotfiles` repository to your account. Forking means that it will create a new repo in your GitHub account, identical to the original one. You'll have a new repository on your GitHub account, `your_github_username/dotfiles`. We need to fork because each of you will need to put specific information (e.g. your name) in those files.
-
-Open your terminal. **Don't blindly copy paste this line**, replace `replace_this_with_your_github_username` with *your*
-own github usernickname.
+Abra seu terminal e digite a seguinte linha (**NÃO COPIE E COLE**), substituindo `seu_nome_no_github` por, bem, seu nome no github.
 
 ```bash
-export GITHUB_USERNAME=replace_this_with_your_github_username
-
-# Example:
-#   export GITHUB_USERNAME=ssaunier
+export GITHUB_USERNAME=seu_nome_no_github
 ```
 
-Now copy/paste this very long line in your terminal. Do **not** change this one.
+Agora copie e cole essa linha. **NÃO É NECESSÁRIO ALTERAR**.
 
 ```bash
 mkdir -p ~/code/$GITHUB_USERNAME && cd $_ && git clone git@github.com:$GITHUB_USERNAME/dotfiles.git
 ```
 
-Run the `dotfiles` installer.
+Rode o instalador `dotfiles`:
 
 ```bash
 cd ~/code/$GITHUB_USERNAME/dotfiles
 zsh install.sh
 ```
 
-Then run the git installer:
+Rode o installador `git`:
 
 ```bash
 cd ~/code/$GITHUB_USERNAME/dotfiles
 zsh git_setup.sh
 ```
 
-:point_up: This will **prompt** you for your name (`Firstname Lastname`) and your email.
+:point_up: Isso pedirá seu nome (o primeiro e o último) e seu email.
 
-Be careful, you **need** to put the **same** email as the one you sign up with on GitHub.
+Cuidado, pois o email precisa ser o **mesmo** que o seu email cadastrado no GitHub!
 
-Please now **quit** all your opened terminal windows.
+Ao terminar, feche todas as janelas do Terminal.
 
-### Sublime Text auto-configuration
+### Sublime Text auto-configuração
 
-Open a new terminal and type this:
-
-```bash
-stt
-```
-
-It will **open Sublime Text in the context of your current folder**. That's how we'll use it.
-
-**Close Sublime text** and open it again:
+Abra uma nova janela e digite isso:
 
 ```bash
 stt
 ```
 
-**Wait 1 minute** for additional packages to be automatically installed (New tabs with text will automatically open, containing documentation for each new package installed). TO follow package installation, you can go to `View > Show console`.
+Isso abrirá o Sublime Text na sua pasta atual. **Feche-o e abra novamente**.
 
-To check if plugins are installed, open the Command Palette (`⌘` + `⇧` + `P` on OSX, `Ctrl` + `⇧` + `P` on Linux), type in `Packlist` and then `Enter`, you should see a couple of packages installed (like [Emmet](http://emmet.io/)).
+**Espere 1 minuto**. Pacotes de personalização (adicionados no passo de `Dotfiles`) serão automaticamente instalados (novas Tabs aparecerão cada vez que um pacote terminar de ter sido instalado, apresentando mais informações sobre o console).
 
-If you don't, please install all of them manually. The list is referenced [here](https://github.com/lewagon/dotfiles/blob/master/Package%20Control.sublime-settings).
+Para checar todos os plugins / pacotes instalados, basta pressionar `Ctrl` + `⇧` + `P` para abrir a Paleta de Comandos, digitar `Packlist` e pressionar `Enter`. Você verá uma lista dos pacotes / plugins já instalados (como [Emmet](http://emmet.io/)).
 
-When it's done, you can close Sublime Text.
+Caso algo dê errado e você não consiga encontrá-los, por favor instale-os manualmente. A lista de pacotes que você deve possuir estão listadas [aqui](https://github.com/RafaelAlonso/TeStDotfiles/blob/master/Package%20Control.sublime-settings)
+
+Ao terminar, poderá fechar o Sublime Text.
 
 
-## Installing Ruby (with [rbenv](https://github.com/sstephenson/rbenv))
+## Instalando o Ruby (com [rbenv](https://github.com/sstephenson/rbenv))
 
-First we need to clean up any previous Ruby installation you might have:
+Para ter certeza que não estará instalando nada duplicado, copie e cole isso no seu terminal para limpar qualquer instalação Ruby que você tenha feito anteriormente:
 
 ```bash
 rvm implode && sudo rm -rf ~/.rvm
@@ -192,7 +181,7 @@ rvm implode && sudo rm -rf ~/.rvm
 rm -rf ~/.rbenv
 ```
 
-Then in the terminal, run:
+Ao terminar, rode:
 
 ```bash
 sudo apt-get install -y build-essential tklib zlib1g-dev libssl-dev libffi-dev libxml2 libxml2-dev libxslt1-dev libreadline-dev
@@ -201,65 +190,42 @@ git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 ```
 
-**Close your terminal and open it again** (Alt+F4 and restart it). If you get a warning, just **ignore** it from now (Ruby is not installed yet).
+**Feche seu terminal e abra-o novamente**. Caso receba um aviso, apenas o **ignore** (Ruby ainda não está instalado ainda)
 
-
-Now, you are ready to install the latest ruby version, and set it as the default version.
-
-Run this command, it will **take a while (5-10 minutes)**
+Agora você estará pronto para usar a versão 2.4.4 e colocá-la como a versão default. Rode o seguinte comando (**costuma demorar de 5 a 10 minutos**).
 
 ```bash
 rbenv install 2.4.4
 ```
 
-Once the ruby installation is done, run this command to tell the system
-to use the 2.4.4 version by default.
+Quando a instalação for concluída, rode esse comando para dizer ao sistema para usar a versão 2.4.4 por default.
 
 ```bash
 rbenv global 2.4.4
 ```
 
-Then **restart** your Terminal again (close it and reopen it).
+Agora **reinicie** seu Terminal mais uma vez e rode o seguinte comando:
 
 ```bash
 ruby -v
 ```
 
-You should see something starting with `ruby 2.4.4p`. If not, ask a teacher.
+Você deverá ver algo começando com `ruby 2.4.4p`. Se não, procure por ajuda.
 
-## Installing some gems
+## Instalando gemas
 
----
-
-:warning: If you are in **China** :cn:, you should update the way we'll install gem with the following commands. If you are not in China, well just skip this and go directly to the next `gem install` command!
-
-```bash
-# China only!
-gem sources --remove https://rubygems.org/
-gem sources -a https://ruby.taobao.org/
-gem sources -l
-# *** CURRENT SOURCES ***
-
-# https://ruby.taobao.org
-# Ensure it only has ruby.taobao.org
-```
-
----
-
-All, please run the following line:
+Rode o seguinte comando:
 
 ```bash
 gem install rake bundler rspec rubocop pry pry-byebug hub colored octokit
 ```
 
-**Never** install a gem with `sudo gem install`! Even if you stumble upon a Stackoverflow answer
-(or the Terminal) telling you to do so.
+**Nunca** instale uma gema com `sudo gem install`, mesmo que encontre uma resposta no Stackoverflow (ou no próprio Terminal) pedindo que você faça isso!!
 
 
 ## Postgresql
 
-In a few weeks, we'll talk about SQL and Databases and you'll need something called Postgresql,
-an open-source robust and production-ready database. Let's install it now.
+Postgresql é um banco de dados open-source robusto e production-ready. Mais para frente será útil, então instale-o agora rodando o seguinte comando
 
 ```
 sudo apt-get install -y postgresql postgresql-contrib libpq-dev build-essential
@@ -273,41 +239,12 @@ rm -f /tmp/caller
 
 ## Check-up
 
-Let's check if you successfully installed everything.
+Por fim, veja se tudo está instalado corretamente
 
-Quit all opened Terminal, open a new one and run the following commands:
-
+Feche todas as janelas do seu terminal, abra uma nova e rode o seguinte comando:
 ```bash
-curl -Ls https://raw.githubusercontent.com/lewagon/setup/master/check.rb > _.rb && ruby _.rb || rm _.rb
+curl -Ls https://raw.githubusercontent.com/RafaelAlonso/TeSt/master/check.rb > _.rb && ruby _.rb || rm _.rb
 ```
 
-It should tell you if your workstation is ready :) If not, ask a teacher.
-
-
-## Alumni
-
-Register as a Wagon alumni by going to [kitt.lewagon.com/onboarding](http://kitt.lewagon.com/onboarding). Select your batch, sign in with GitHub and enter all your information.
-
-Your teacher will then validate that you are indeed part of the batch. You can ask him to do it as soon as you completed the registration form.
-
-Once the teacher has approved your profile, go to your email inbox. You should have 2 emails:
-
-- One from Slack, inviting you to the Le Wagon Alumni slack community (where you'll chat with your buddies and all the previous alumni). Click on **Join** and fill the information.
-- One from GitHub, inviting you to `lewagon` team. **Accept it** otherwise you won't be able to access the lecture slides.
-
-
-## Slack
-
-[Install Slack for Linux (beta)](https://get.slack.help/hc/en-us/articles/212924728-Slack-for-Linux-beta-).
-
-Launch the app and sign in to `lewagon-alumni` organization.
-
-Make sure you upload a picture there.
-
-You can also sign in to Slack on your iPhone or Android device!
-
-The idea is that you'll have Slack open all day, so that you can share useful links / ask for help / decide where to go to lunch / etc.
-
-Enjoy your ride with Le Wagon :)
-
+Isso deverá mostrar que está tudo pronto. Se não, procure por ajuda.
 
