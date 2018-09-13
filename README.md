@@ -1,12 +1,4 @@
-## New alumni
-
-### In China?
-
-Before starting the setup :point_down: you will get VPN codes for Astrill from your city manager.
-
-### Worldwide
-
-Setup guides made for [Le Wagon](https://www.lewagon.com). Please choose your operating system (OS):
+Escolha seu sistema operacional para começar a configuração:
 
 <table>
   <tr>
@@ -27,7 +19,3 @@ Setup guides made for [Le Wagon](https://www.lewagon.com). Please choose your op
     </td>
   </tr>
 </table>
-
-## Already done the FullStack program?
-
-Then jump to [this guide](second-setup/OSX.md).
