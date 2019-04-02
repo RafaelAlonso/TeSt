@@ -35,7 +35,7 @@ Para baixar o sublime text:
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 ```
 
-:point_up: Esse comando vai pedir sua senha: `[sudo] password for <username>:` (porquê está chamando `sudo`). Não se preocupe se nunca tiver feito isso antes, é normal. Você não terá um feedback visual enquanto digita sua senha (não irá aparecer nenhum `*` quando apertar uma tecla), então digite com cuidado e garanta que a senha está correta. Após digitá-la, aperte `Enter`.
+:point_up: Esse comando vai pedir sua senha: `[sudo] password for <username>:` (porque está chamando `sudo`). Não se preocupe se nunca tiver feito isso antes, é normal. Você não terá um feedback visual enquanto digita sua senha (não irá aparecer nenhum `*` quando apertar uma tecla), então digite com cuidado e garanta que a senha está correta. Após digitá-la, aperte `Enter`.
 
 Continue com a instalação do sublime:
 
