@@ -1,7 +1,3 @@
-# Atenção
-
-Essas configurações foram copiadas e traduzidas do [diretório público do LeWagon](https://github.com/lewagon/setup). O intuito é de uso pessoal, **sem nenhum fim lucrativo de qualquer tipo**.
-
 ## Choose your fighter
 
 Escolha seu sistema operacional para começar a configuração:
