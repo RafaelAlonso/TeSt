@@ -127,7 +127,7 @@ export GITHUB_USERNAME=seu_nome_no_github
 Agora copie e cole essa linha. **NÃO É NECESSÁRIO ALTERAR**.
 
 ```bash
-mkdir -p ~/code/$GITHUB_USERNAME && cd $_ && git clone git@github.com:$GITHUB_USERNAME/dotfiles.git
+mkdir -p ~/code/$GITHUB_USERNAME && cd $_ && git clone git@github.com:$GITHUB_USERNAME/TeStDotfiles.git dotfiles
 ```
 
 Rode o instalador `dotfiles`:
